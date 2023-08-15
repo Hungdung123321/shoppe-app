@@ -32,7 +32,6 @@ module.exports = {
         '22.5': '360px',
       },
       colors: {
-        transparent: 'transparent',
         'white': '#ffffff',
         'light-gray': '#EFEFEF',
         'gray': '#D8D8D8',
