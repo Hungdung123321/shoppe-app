@@ -4,13 +4,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { StyledFlatList, StyledView } from '../../components/ReactCoreStyled/ReactCore'
 import { PRODUCT_DATA, TAG_DATA } from '../../constants/common'
 import { CardTag, Wraper, CardProduct, SliderProduct } from '../../components'
+import { useNavigation } from '@react-navigation/native'
+import { SCREEN_NAME } from '../../routes/router'
 
 
 
 const Home = () => {
 
-    const dispatch = useDispatch()
-
+    const navigation = useNavigation()
 
     return (
         <StyledView className='mt-1'>
@@ -31,7 +32,7 @@ const Home = () => {
                     <SliderProduct />
                 </Swiper>
             </StyledView>
-            <Wraper classWarper={'mt-1'}>
+            <Wraper onViewAll={() => navigation.navigate(SCREEN_NAME.DETAIL)} classWarper={'mt-1'}>
                 <StyledFlatList
                     className='w-full'
                     data={PRODUCT_DATA}

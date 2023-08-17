@@ -5,7 +5,7 @@ import SearchInput from '../SearchInput'
 
 const Header = () => {
     return (
-        <StyledView className='fixed top-0 left-0 right-0 pt-2'>
+        <StyledView className='fixed top-0 left-0 right-0 pt-2 pb-1'>
             <StyledView className='mb-1 flex-row items-center justify-between'>
                 <StyledImage source={LOGO} />
                 <StyledView className='flex-row'>

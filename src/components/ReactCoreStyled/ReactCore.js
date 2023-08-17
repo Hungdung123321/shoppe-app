@@ -12,14 +12,16 @@ export const StyledScrollView = styled(ScrollView)
 
 // fonts
 
+export const Heading3 = styled(Text, 'font-nomal text-xl')
 export const Heading4 = styled(Text, 'font-medium text-xl')
 export const Heading5 = styled(Text, 'font-medium text-base')
 export const TextBodyMedium = styled(Text, 'font-medium text-sm')
 export const TextBodySmall = styled(Text, 'font-normal text-xs')
 
-export const ButtonIcon = ({ path, classButtonIcon }) =>
-    <StyledButton className={classButtonIcon}>
+export const ButtonIcon = ({ path, classButtonIcon, children }) =>
+    <StyledButton className={`flex-row items-center ${classButtonIcon}`}>
         <StyledImage source={path} />
+        {children}
     </StyledButton>
 
 

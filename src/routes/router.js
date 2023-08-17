@@ -32,4 +32,5 @@ export const DetailScreen = {
 
 export const appRoute = [
     HomeScreen,
+    DetailScreen,
 ]
