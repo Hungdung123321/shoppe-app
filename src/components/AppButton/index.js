@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledButton, StyledText } from '../ReactCoreStyled/ReactCore';
+import { StyledButton, StyledText, TextBodySmall } from '../ReactCoreStyled/ReactCore';
 import { BUTTON_TYPE } from '../../constants/common';
 
 const AppButton = ({ type = BUTTON_TYPE.DEFAULT, children, ClassContent, ...rest }) => {
@@ -7,7 +7,7 @@ const AppButton = ({ type = BUTTON_TYPE.DEFAULT, children, ClassContent, ...rest
     switch (type) {
         case BUTTON_TYPE.DEFAULT:
             return <StyledButton {...rest}>
-                <StyledText className={ClassContent}>{children}</StyledText>
+                <TextBodySmall className={ClassContent}>{children}</TextBodySmall>
             </StyledButton>;
     }
 

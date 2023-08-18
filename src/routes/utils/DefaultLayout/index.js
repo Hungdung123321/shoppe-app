@@ -3,10 +3,10 @@ import Header from '../../../components/Header'
 import { StyledScrollView, StyledView } from '../../../components/ReactCoreStyled/ReactCore'
 import Footer from '../../../components/footer'
 
-const DefaultLayout = ({ children }) => {
+const DefaultLayout = ({ ShowSearchBar = true, children }) => {
     return (
-        <StyledView className='relative px-1'>
-            <Header />
+        <StyledView className='relative px-1 bg-light-gray'>
+            <Header hideSearchbar={ShowSearchBar} />
             <StyledScrollView showsVerticalScrollIndicator={false} className='pb-4'>
                 {children}
                 <Footer />

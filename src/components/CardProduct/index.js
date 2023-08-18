@@ -3,11 +3,11 @@ import { StyledButton, StyledImage, StyledText, StyledView } from '../ReactCoreS
 import { IMG_product1 } from '../../assets'
 
 
-const CardProduct = ({ title, style }) => {
+const CardProduct = ({ title, style, ...props }) => {
     return (
-        <StyledButton className={`w-11 h-14 ${style}`}>
-            <StyledView className='w-full mb-0.375'>
-                <StyledImage source={IMG_product1} className={`w-full`} />
+        <StyledButton className={`w-11 border border-gray rounded-lg ${style}`} {...props}>
+            <StyledView className='w-full h-12'>
+                <StyledImage source={IMG_product1} className={`w-full h-full rounded-lg`} />
             </StyledView>
             <StyledText className='text-sm font-normal text-black'>{title}</StyledText>
             <StyledText className='text-sm font-normal text-accent'>$ 20,00</StyledText>
