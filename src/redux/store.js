@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import TestReducer from './TestSlice'
+import BarsReducer from './BarsSlice'
 
-const Reducer = {
-    dung: TestReducer
+const Reducers = {
+    Bars: BarsReducer
 }
 
 export const store = configureStore({
-    reducer: Reducer,
+    reducer: Reducers
 })
