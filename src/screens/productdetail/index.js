@@ -1,13 +1,13 @@
 import React from 'react'
-import { ButtonIcon, Heading3, Heading5, StyledFlatList, StyledImage, StyledView } from '../../components/ReactCoreStyled/ReactCore'
+import { ButtonIcon, Heading3, Heading5, StyledFlatList, StyledImage, StyledText, StyledView } from '../../components/ReactCoreStyled/ReactCore'
 import { IC_share, IMG_product1 } from '../../assets'
 import AppButton from '../../components/AppButton'
 import BoxText from '../../components/BoxText'
 import { CardProduct, DropDown, Wraper } from '../../components'
 import { SIMILIAR_PRODUCT_DATA } from '../../constants/common'
 
-
 const ProductDetail = () => {
+
     return (
         <StyledView>
             <StyledView className='w-full h-23.375'>
@@ -32,12 +32,13 @@ const ProductDetail = () => {
                 <DropDown />
                 <DropDown />
             </StyledView>
-            <Wraper>
+            <Wraper title={'Similar Items'}>
                 <StyledFlatList
                     data={SIMILIAR_PRODUCT_DATA}
                     renderItem={({ item }) => <CardProduct style={'mr-1'} title={item.title} />}
                     keyExtractor={item => item.id}
                     horizontal={true}
+                    showsHorizontalScrollIndicator={false}
                 />
             </Wraper>
         </StyledView>

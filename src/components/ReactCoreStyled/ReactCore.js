@@ -11,13 +11,13 @@ export const StyledTextInput = styled(TextInput)
 export const StyledFlatList = styled(FlatList)
 export const StyledScrollView = styled(ScrollView)
 
-// fonts
 
+// fonts
 export const Heading3 = styled(Text, 'font-nomal text-xl')
 export const Heading4 = styled(Text, 'font-medium text-xl')
 export const Heading5 = styled(Text, 'font-medium text-base')
 export const TextBodyMedium = styled(Text, 'font-medium text-sm')
-export const TextBodySmall = styled(Text, 'font-normal text-xs')
+export const TextBodySmall = styled(Text, 'font-normal text-base')
 
 export const ButtonIcon = ({ path, positionIC, classButtonIcon, children, ...props }) => {
 
@@ -31,7 +31,7 @@ export const ButtonIcon = ({ path, positionIC, classButtonIcon, children, ...pro
             case POSITION_IC.RIGHT:
                 return <>
                     {children}
-                    <StyledImage source={path} />
+                    <StyledImage className="pl-0.5" source={path} />
                 </>
             default:
                 return <StyledImage source={path} />

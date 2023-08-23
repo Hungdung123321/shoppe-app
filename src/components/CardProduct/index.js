@@ -5,8 +5,8 @@ import { IMG_product1 } from '../../assets'
 
 const CardProduct = ({ title, style, ...props }) => {
     return (
-        <StyledButton className={`w-11 border border-gray rounded-lg ${style}`} {...props}>
-            <StyledView className='w-full h-12'>
+        <StyledButton className={`w-11 rounded-lg ${style}`} {...props}>
+            <StyledView className='w-full h-12 mb-0.5'>
                 <StyledImage source={IMG_product1} className={`w-full h-full rounded-lg`} />
             </StyledView>
             <StyledText className='text-sm font-normal text-black'>{title}</StyledText>
