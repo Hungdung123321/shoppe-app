@@ -1,5 +1,6 @@
 import { styled } from "nativewind";
 import { Text, View, TouchableOpacity, Image, TextInput, FlatList, ScrollView } from "react-native";
+import { POSITION_IC } from "../../constants/common";
 
 // React core styled
 export const StyledText = styled(Text)
@@ -10,18 +11,38 @@ export const StyledTextInput = styled(TextInput)
 export const StyledFlatList = styled(FlatList)
 export const StyledScrollView = styled(ScrollView)
 
-// fonts
 
+// fonts
 export const Heading3 = styled(Text, 'font-nomal text-xl')
 export const Heading4 = styled(Text, 'font-medium text-xl')
 export const Heading5 = styled(Text, 'font-medium text-base')
 export const TextBodyMedium = styled(Text, 'font-medium text-sm')
-export const TextBodySmall = styled(Text, 'font-normal text-xs')
+export const TextBodySmall = styled(Text, 'font-normal text-base')
 
-export const ButtonIcon = ({ path, classButtonIcon, children }) =>
-    <StyledButton className={`flex-row items-center ${classButtonIcon}`}>
-        <StyledImage source={path} />
-        {children}
+export const ButtonIcon = ({ path, positionIC, classButtonIcon, children, ...props }) => {
+
+    const renderContent = () => {
+        switch (positionIC) {
+            case POSITION_IC.LEFT:
+                return <>
+                    <StyledImage source={path} />
+                    {children}
+                </>
+            case POSITION_IC.RIGHT:
+                return <>
+                    {children}
+                    <StyledImage className="pl-0.5" source={path} />
+                </>
+            default:
+                return <StyledImage source={path} />
+        }
+    }
+
+    return <StyledButton className={`flex-row items-center ${classButtonIcon}`} {...props}>
+        {renderContent()}
     </StyledButton>
+
+}
+
 
 

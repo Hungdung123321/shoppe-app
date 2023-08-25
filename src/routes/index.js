@@ -10,7 +10,7 @@ const MainRoute = () => {
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 {
-                    appRoute.map(({ name, screen_id, component, layout }) => {
+                    appRoute.map(({ name, screen_id, component, layout, isSearchBar }) => {
 
                         const Component = component
                         const Layout = layout
@@ -21,7 +21,7 @@ const MainRoute = () => {
                         >
                             {
                                 () =>
-                                    <Layout>
+                                    <Layout ShowSearchBar={isSearchBar}>
                                         <Component />
                                     </Layout>
                             }

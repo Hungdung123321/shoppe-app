@@ -1,14 +1,19 @@
 import React from 'react';
-import { StyledButton, StyledText } from '../ReactCoreStyled/ReactCore';
+import { StyledButton, StyledImage, TextBodySmall } from '../ReactCoreStyled/ReactCore';
 import { BUTTON_TYPE } from '../../constants/common';
 
-const AppButton = ({ type = BUTTON_TYPE.DEFAULT, children, ClassContent, ...rest }) => {
+const AppButton = ({ type = BUTTON_TYPE.DEFAULT, children, ClassContent, path, ...rest }) => {
 
     switch (type) {
         case BUTTON_TYPE.DEFAULT:
-            return <StyledButton {...rest}>
-                <StyledText className={ClassContent}>{children}</StyledText>
+            return <StyledButton hitSlop={2} {...rest}>
+                <TextBodySmall className={ClassContent}>{children}</TextBodySmall>
             </StyledButton>;
+        case BUTTON_TYPE.ICON:
+            return <StyledButton hitSlop={2} {...rest}>
+                <StyledImage source={path} />
+            </StyledButton>;
+
     }
 
 };

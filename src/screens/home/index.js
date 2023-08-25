@@ -32,7 +32,7 @@ const Home = () => {
                     <SliderProduct />
                 </Swiper>
             </StyledView>
-            <Wraper onViewAll={() => navigation.navigate(SCREEN_NAME.DETAIL)} classWarper={'mt-1'}>
+            <Wraper title={'Shop The Latest'} onViewAll={() => navigation.navigate(SCREEN_NAME.DETAIL)} classWarper={'mt-1'}>
                 <StyledFlatList
                     className='w-full'
                     data={PRODUCT_DATA}
