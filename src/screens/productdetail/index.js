@@ -1,9 +1,7 @@
 import React from 'react'
 import { ButtonIcon, Heading3, Heading5, StyledFlatList, StyledImage, StyledText, StyledView } from '../../components/ReactCoreStyled/ReactCore'
 import { IC_share, IMG_product1 } from '../../assets'
-import AppButton from '../../components/AppButton'
-import BoxText from '../../components/BoxText'
-import { CardProduct, DropDown, Wraper } from '../../components'
+import { AppButton, BoxText, CardProduct, DropDown, Wraper } from '../../components'
 import { SIMILIAR_PRODUCT_DATA } from '../../constants/common'
 
 const ProductDetail = () => {

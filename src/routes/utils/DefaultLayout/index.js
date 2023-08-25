@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React, { useCallback, useRef } from 'react'
 import { StyledScrollView, StyledView } from '../../../components/ReactCoreStyled/ReactCore'
-import { Footer, Header, ShoppingCartItem, ShopppingBagModal } from '../../../components'
-import { SHOPPING_BAG_DATA } from '../../../constants/common'
+import { Footer, Header, ShopppingBagModal } from '../../../components'
+import { useFocusEffect } from '@react-navigation/native'
 
 
 
@@ -11,20 +11,13 @@ const DefaultLayout = ({ ShowSearchBar = true, children }) => {
 
     return (
         <StyledView className='relative px-1 bg-light-gray'>
-            <Header onPressCart={() => ShoppingBagRef.current.open()} hideSearchbar={ShowSearchBar} />
+            <Header onPressCart={() => ShoppingBagRef.current?.present()} hideSearchbar={ShowSearchBar} />
             <StyledScrollView showsVerticalScrollIndicator={false} className='pb-4'>
                 {children}
                 <Footer />
                 <StyledView className='h-18' />
             </StyledScrollView>
-            <ShopppingBagModal
-                Modalref={ShoppingBagRef}
-                data={SHOPPING_BAG_DATA}
-                renderItem={({ item }) => <StyledView className='my-1'>
-                    <ShoppingCartItem />
-                </StyledView>
-                }
-            />
+            <ShopppingBagModal Modalref={ShoppingBagRef} onBackButton={() => ShoppingBagRef.current?.dismiss()} />
         </StyledView>
     )
 }

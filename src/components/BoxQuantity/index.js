@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyledView, TextBodySmall } from '../ReactCoreStyled/ReactCore'
-import AppButton from '../AppButton'
 import { useState } from 'react'
+import { AppButton } from '../../components'
 
 
 const BoxQuantity = ({ classBoxQuantity }) => {

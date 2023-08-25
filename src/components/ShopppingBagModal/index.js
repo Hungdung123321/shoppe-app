@@ -1,39 +1,43 @@
-import React, { useRef } from 'react'
+import React, { useMemo } from 'react'
 import { StyleSheet } from 'react-native'
-import AppModal from '../AppModal'
-import HeaderModal from '../HeaderModal'
+import { StyledView } from '../ReactCoreStyled/ReactCore'
+import { BottomSheetFlatList, BottomSheetModal } from '@gorhom/bottom-sheet'
+import { SHOPPING_BAG_DATA } from '../../constants/common'
+import { ShoppingCartItem } from '../../components'
+import { FooterModalShoppingBag, HeaderModalShoppingBag } from './utils'
 
 const ShoppingBagModal = ({
     Modalref,
     data,
     renderItem,
+    onBackButton,
     ...resetModal
 }) => {
 
-    const ShoppingBagContentRef = useRef(null)
+    const snapPoints = useMemo(() => ["100%"], []);
 
     return (
-        <AppModal
+        <BottomSheetModal
             ref={Modalref}
-            contentRef={ShoppingBagContentRef}
-            modalStyle={{ minHeight: '100%' }}
-            adjustToContentHeight={true}
-            disableScrollIfPossible={false}
-            flatListProps={{
-                data: data,
-                renderItem: renderItem,
-                contentContainerStyle: styles.contentContainerStyle,
-                keyExtractor: item => item.id,
-                showsVerticalScrollIndicator: false,
-                initialNumToRender: 10,
-                maxToRenderPerBatch: 10,
-                scrollEnabled: true,
-            }}
-            HeaderComponent={() => (
-                <HeaderModal />
-            )}
-            {...resetModal}
-        />
+            snapPoints={snapPoints}
+            enablePanDownToClose={false}
+        >
+            <StyledView className='flex-1'>
+                <HeaderModalShoppingBag onBackButton={onBackButton} />
+                <BottomSheetFlatList
+                    data={SHOPPING_BAG_DATA}
+                    renderItem={() => (
+                        <StyledView className='my-1'>
+                            <ShoppingCartItem />
+                        </StyledView>
+                    )}
+                    initialNumToRender={5}
+                    contentContainerStyle={styles.contentContainerStyle}
+                    keyExtractor={item => item.id}
+                />
+                <FooterModalShoppingBag />
+            </StyledView>
+        </BottomSheetModal>
     )
 }
 
@@ -41,7 +45,6 @@ export default ShoppingBagModal
 
 const styles = StyleSheet.create({
     contentContainerStyle: {
-        height: '100%',
-        paddingHorizontal: 16
+        paddingHorizontal: 16,
     }
 })

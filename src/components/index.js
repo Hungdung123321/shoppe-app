@@ -1,4 +1,5 @@
 export { default as AppButton } from './AppButton'
+export { default as BoxText } from './BoxText'
 export { default as CardProduct } from './CardProduct'
 export { default as CardTag } from './CardTag'
 export { default as Footer } from './footer'

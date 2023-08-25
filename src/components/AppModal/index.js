@@ -1,10 +1,12 @@
-import React, { forwardRef, useRef } from 'react'
-import { Modalize } from 'react-native-modalize'
+import { View, Text } from 'react-native'
+import React from 'react'
 
-const AppModal = forwardRef((props, ref) => {
-    const modalizeRef = useRef(null);
-
-    return <Modalize ref={ref || modalizeRef} {...props} />;
-});
+const AppModal = () => {
+    return (
+        <View>
+            <Text>AppModal</Text>
+        </View>
+    )
+}
 
 export default AppModal

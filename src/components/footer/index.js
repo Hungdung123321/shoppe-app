@@ -2,8 +2,8 @@ import React from 'react'
 import { ButtonIcon, StyledButton, StyledText, StyledView } from '../ReactCoreStyled/ReactCore'
 import FooterInput from '../FooterInput'
 import { Text } from 'react-native'
-import AppButton from '../AppButton'
 import { IC_facebook, IC_instargram, IC_twiter } from '../../assets'
+import { AppButton } from '../../components'
 
 
 const Footer = () => {

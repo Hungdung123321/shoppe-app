@@ -6,11 +6,11 @@ const AppButton = ({ type = BUTTON_TYPE.DEFAULT, children, ClassContent, path, .
 
     switch (type) {
         case BUTTON_TYPE.DEFAULT:
-            return <StyledButton {...rest}>
+            return <StyledButton hitSlop={2} {...rest}>
                 <TextBodySmall className={ClassContent}>{children}</TextBodySmall>
             </StyledButton>;
         case BUTTON_TYPE.ICON:
-            return <StyledButton {...rest}>
+            return <StyledButton hitSlop={2} {...rest}>
                 <StyledImage source={path} />
             </StyledButton>;
 

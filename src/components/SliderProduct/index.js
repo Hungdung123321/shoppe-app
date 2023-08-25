@@ -1,7 +1,7 @@
 import React from 'react'
 import { Heading4, StyledImage, StyledView, TextBodySmall } from '../ReactCoreStyled/ReactCore'
 import { IMG_slder_product } from '../../assets'
-import AppButton from '../AppButton'
+import { AppButton } from '../../components'
 
 const SliderProduct = ({ className }) => {
     return (
